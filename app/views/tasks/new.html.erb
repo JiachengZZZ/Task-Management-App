@@ -1,0 +1,48 @@
+<h1>Create a New Task</h1>
+
+<%= form_for @task do |f| %>
+  <% if @task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+      <% @task.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :due_date, "Due date" %>
+    <%= f.date_field :due_date, min: Date.today.to_s %>
+  </div>
+
+  <div class="field">
+    <%= f.label :difficulty, "Priority" %>
+    <%= f.select :difficulty, Task.difficulties.keys.map { |difficulty| [difficulty.humanize, difficulty] }, {}, { class: 'select-class' } %>  
+  </div>
+
+  <div class="field">
+    <%= f.label :estimate, "Estimate time range(in hours)" %>
+    <%= f.number_field :estimate, value: @task.estimate || 0, required: true, min: 0, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<div class="back-link">
+  <%= link_to 'Back', tasks_path, class: 'button' %>
+</div>

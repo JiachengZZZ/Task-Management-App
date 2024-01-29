@@ -1,0 +1,46 @@
+<h1>Incoming Tasks...</h1>
+
+<body>
+    <div>
+        <p class="centered">Try to click "Due Date" or "Sugessted Start Date" to quickly sort your tasks...</p>
+      
+    </div>
+</body>    
+
+<table>
+  <thead>
+    <tr>
+      <th class="centered">Name</th>
+      <th class="centered">
+        <%= link_to 'Due Date', tasks_path(sort: 'due_date', direction: params[:direction] == 'asc' ? 'desc' : 'asc'), style: 'color: white;' %>
+      </th>
+      <th class="centered">Priority</th>
+      <th class="centered">
+        <%= link_to 'Suggested Start Date', tasks_path(sort: 'start_time', direction: params[:direction] == 'asc' ? 'desc' : 'asc'), style: 'color: white;' %>
+      </th>
+      <th class="centered">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td class="centered"><%= task.name %></td>
+        <td class="centered"><%= task.due_date %></td>
+        <td class="centered"><%= task.difficulty %></td>
+        <td class="centered"><%= task.start_time %></td>
+        <td class="centered">
+          <%= link_to 'Show', task_path(task), class: 'button' %> |
+          <%= link_to 'Edit', edit_task_path(task), class: 'button' %> |
+          <%= link_to 'Delete', manual_delete_task_path(task), class: 'button' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class='centered'>
+  <%= link_to 'New Task', new_task_path, class: 'button' %>
+  <%= link_to 'Log Out', login_path, class: 'button' %>
+</div>
+
+

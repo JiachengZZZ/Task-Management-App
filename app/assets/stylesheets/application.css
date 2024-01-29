@@ -1,0 +1,144 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+#error_explanation {
+  color: #a94442;
+  background-color: #f2dede;
+  border: 1px solid #ebccd1;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+#error_explanation h2 {
+  margin-top: 0;
+}
+
+#error_explanation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#error_explanation ul li {
+  margin-bottom: 5px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 50px;
+    padding: 20px;
+    background-color: #F9FBFF;
+}
+h1 {
+    color: #333;
+    font-style: italic;
+    text-align: center;
+    padding: 10px;
+    animation: 2s infinite alternate ease-in-out pulse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+th {
+    background-color: #ADD8E6; /* Light blue color */
+    color: white;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+.button {
+    background-color: #58b9e2; /* Light blue color */
+    color: white;
+    padding: 10px 20px 10px 20px; 
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+.button:hover {
+    background-color: #8fbed6; /* Slightly darker shade for hover */
+}
+.centered {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+table {
+  width: 100%; /* to make sure the table spans the full width of its container */
+  margin-left: auto;
+  margin-right: auto; /* these two properties will center the table */
+}
+
+p {
+    font-size: 16px; /* Slightly larger font size for readability */
+    line-height: 1.6; /* Improved line spacing */
+    color: #333; /* Dark color for text */
+}
+strong {
+    color: #af4c4c; /* Color for labels */
+    font-weight: normal; /* Normal weight for a cleaner look */
+}
+
+@keyframes pulse {
+0%, 100% {
+    transform: scale(1); /* 原始大小 */
+    color: #7fcbe2; /* 初始颜色 */
+}
+50% {
+    transform: scale(1.1); /* 放大到 110% 的大小 */
+    color: #7fcbe2; /* 变化颜色，让动画更有艺术感 */
+}
+    }
+
+.field, .actions {
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+input[type="text"], input[type="date"], input[type="number"], textarea, .select-class {
+    width: 100%;
+    padding: 8px;
+    /* margin: 5px 0 20px 0; */
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type="submit"] {
+    width: 100%;
+    background-color: #7fcbe2;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background-color: #7fcbe2;
+}
+.back-link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+}
